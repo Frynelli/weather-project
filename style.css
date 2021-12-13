@@ -1,3 +1,41 @@
 h1 {
-  color: palegreen;
+  color: rgb(54, 14, 148);
+}
+ul {
+  list-style: none;
+  padding-left: 0rem;
+}
+.right-list {
+  font-size: 12px;
+}
+.container {
+  padding: 45px 17px 40px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  order: 3;
+  height: 400px;
+  background-color: white;
+  max-width: 900px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.container-left {
+  text-align: left;
+}
+.open-source {
+  position: relative;
+  top: 180px;
+  font-size: 10px;
+}
+.container-right {
+}
+.img-temp {
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  width: 50px;
+  height: 50px;
 }
