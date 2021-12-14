@@ -4,6 +4,8 @@ h1 {
 ul {
   list-style: none;
   padding-left: 0rem;
+}
+li::first-letter {
   text-transform: capitalize;
 }
 #temperature {
