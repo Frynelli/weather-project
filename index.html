@@ -10,39 +10,44 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <title>Weather project</title>
   </head>
   <body>
-    <div class="container">
-      <div class="container-left">
-        <h1>Athens</h1>
-        <ul>
-          <li>Wednesday 1:00pm</li>
-          <li>Mostly Sunny</li>
-        </ul>
-        <div class="open-source">
-          <p>
-            <a href="https://github.com/Frynelli/weather-project"
-              >Open source</a
-            >
-            by Frynelli
-          </p>
+    <div class="full-page">
+      <div class="container">
+        <div class="container-left">
+          <h1 id="city"></h1>
+          <ul>
+            <li>Wednesday 1:00pm</li>
+            <li id="description">Mostly Sunny</li>
+          </ul>
+        </div>
+        <div class="container-right">
+          <div class="img-temp">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="cloudy"
+            />
+            <h2 id="temperature"></h2>
+
+            <a herf="#" id="celcius">ºC</a>
+            /
+            <a href="#" id="farht">ºF</a>
+          </div>
+          <ul class="right-list">
+            <li>Humiduty: <span id="humidity">47</span>%</li>
+            <li>Wind: <span id="wind">8</span>km/h</li>
+          </ul>
         </div>
       </div>
-      <div class="container-right">
-        <div class="img-temp">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="cloudy"
-          />
-          <h2>14ºC/ºF</h2>
-        </div>
-        <ul class="right-list">
-          <li>Precipitation: 0%</li>
-          <li>Humiduty: 47%</li>
-          <li>Wind: 8 km/h</li>
-        </ul>
+      <div class="open-source">
+        <p>
+          <a href="https://github.com/Frynelli/weather-project">Open source</a>
+          by Frynelli
+        </p>
       </div>
     </div>
     <script type="text/javascript" src="java.js"></script>
