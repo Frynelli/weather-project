@@ -46,8 +46,7 @@ li::first-letter {
   margin: 10px 0px 0px 26px;
   font-size: 10px;
 }
-.container-right {
-}
+
 .img-temp {
   display: flex;
   justify-content: space-between;
