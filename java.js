@@ -1,6 +1,7 @@
-function getDate(timestamp) {
+function haveDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
+  console.log(date);
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -31,7 +32,8 @@ function getTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
   let icon = response.data.weather[0].icon;
-  dateElement.innerHTML = getDate(response.data.dt * 1000);
+  dateElement.innerHTML = haveDate(response.data.dt * 1000);
+  console.log(response.data.dt * 1000);
   temp.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -43,8 +45,18 @@ function getTemperature(response) {
   );
   iconElement.setAttribute(`alt`, response.data.weather[0].description);
 }
+function searchCity(city) {
+  let apiKey = "16ee8d6616116203cc7a912f8467b2d5";
 
-let apiKey = "16ee8d6616116203cc7a912f8467b2d5";
-let city = "Athens";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(getTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(getTemperature);
+}
+function searchEngine(event) {
+  event.preventDefault();
+
+  let typeCity = document.querySelector("#text");
+  searchCity(typeCity.value);
+}
+
+let form = document.querySelector("#input-form");
+form.addEventListener("submit", searchEngine);

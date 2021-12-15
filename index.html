@@ -18,30 +18,43 @@
   <body>
     <div class="full-page">
       <div class="container">
-        <div class="container-left">
-          <h1 id="city"></h1>
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="cloudy"
-            id="icon"
-          />
-          <ul class="date-desc">
-            <li id="date"></li>
-            <li id="description">Mostly Sunny</li>
-          </ul>
+        <div class="form-in">
+          <form class="form" id="input-form">
+            <input
+              id="text"
+              type="text"
+              value="Type your city.."
+              autocomplete="off"
+            />
+            <input id="button" type="submit" value="Search" />
+          </form>
         </div>
-        <div class="container-right">
-          <div class="img-temp">
-            <h2 id="temperature"></h2>
-
-            <a herf="#" id="celcius">ºC</a>
-            /
-            <a href="#" id="farht">ºF</a>
+        <div class="container-form">
+          <div class="container-left">
+            <h1 id="city"></h1>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="cloudy"
+              id="icon"
+            />
+            <ul class="date-desc">
+              <li id="date"></li>
+              <li id="description">Mostly Sunny</li>
+            </ul>
           </div>
-          <ul class="right-list">
-            <li>Humiduty: <span id="humidity">47</span>%</li>
-            <li>Wind: <span id="wind">8</span>km/h</li>
-          </ul>
+          <div class="container-right">
+            <div class="img-temp">
+              <h2 id="temperature"></h2>
+
+              <a herf="#" id="celcius">ºC</a>
+              /
+              <a href="#" id="farht">ºF</a>
+            </div>
+            <ul class="right-list">
+              <li>Humiduty: <span id="humidity">47</span>%</li>
+              <li>Wind: <span id="wind">8</span>km/h</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="open-source">
