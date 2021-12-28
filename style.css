@@ -28,9 +28,9 @@ li::first-letter {
 .container {
   padding: 22px 17px 40px;
   margin-top: 40px;
-  height: 340px;
+  height: 430px;
   background-color: white;
-  max-width: 600px;
+  max-width: 630px;
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -70,4 +70,15 @@ img {
 }
 .date-desc {
   margin-top: 20px;
+}
+.weather-forecast-temp {
+  font-size: 13px;
+  color: black;
+}
+.forecast-min {
+  opacity: 0.5;
+}
+.forecast-image {
+  width: 42px;
+  height: 42px;
 }
