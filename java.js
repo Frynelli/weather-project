@@ -21,7 +21,41 @@ function haveDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast-week");
+  let forecastHtml = `<div class="row">`;
+  let days = ["Wen", "Thu", "Fri", "Sut"];
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="col-2">
+              <div class="weather-forecast-day">${day}</div>
+              <img
+                class="forecast-image"
+                src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                alt="weather-icon"
+                width="42"
+              />
+              <div class="weather-forecast-temp">
+                <span class="forecast-max">21°</span>
+                <span class="forecast-min">17°</span>
+              </div>
+            </div>`;
+  });
 
+  forecastHtml = forecastHtml + `</div>`;
+
+  forecastElement.innerHTML = forecastHtml;
+  console.log(response);
+}
+function getForecast(coordinates) {
+  let apiKey = "16ee8d6616116203cc7a912f8467b2d5";
+  let lon = coordinates.lon;
+  let lat = coordinates.lat;
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  console.log(apiUrlForecast);
+  axios.get(apiUrlForecast).then(displayForecast);
+}
 function getTemperature(response) {
   console.log(response.data);
   let humidityElement = document.querySelector("#humidity");
@@ -33,7 +67,7 @@ function getTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let icon = response.data.weather[0].icon;
   celciusTemperature = response.data.main.temp;
-  dateElement.innerHTML = haveDate(response.data.dt * 1000);
+  dateElement.innerHTML = `Last updated: ` + haveDate(response.data.dt * 1000);
   console.log(response.data.dt * 1000);
   temp.innerHTML = Math.round(celciusTemperature);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -45,6 +79,8 @@ function getTemperature(response) {
     `http://openweathermap.org/img/w/${icon}.png`
   );
   iconElement.setAttribute(`alt`, response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "16ee8d6616116203cc7a912f8467b2d5";
