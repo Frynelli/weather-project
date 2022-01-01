@@ -83,7 +83,7 @@ function getTemperature(response) {
   celciusTemperature = response.data.main.temp;
   dateElement.innerHTML = `Last updated: ` + haveDate(response.data.dt * 1000);
   console.log(response.data.dt * 1000);
-  temp.innerHTML = Math.round(celciusTemperature);
+  temp.innerHTML = Math.round(celciusTemperature) + `C°`;
   humidityElement.innerHTML = response.data.main.humidity;
   descriptionElement.innerHTML = response.data.weather[0].description;
   cityName.innerHTML = response.data.name;
@@ -109,29 +109,7 @@ function searchEngine(event) {
   searchCity(typeCity.value);
 }
 
-function selectFahrenheit(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-
-  let temperatureFahr = document.querySelector("#temperature");
-  temperatureFahr.innerHTML = Math.round((celciusTemperature * 9) / 5 + 32);
-}
-function selectCelcius(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.add("active");
-  celciusLink.classList.remove("active");
-  let temperatureCelc = document.querySelector("#temperature");
-  temperatureCelc.innerHTML = Math.round(celciusTemperature);
-}
-
-let celciusTemperature = null;
 let form = document.querySelector("#input-form");
 form.addEventListener("submit", searchEngine);
 
-let fahrenheitLink = document.querySelector("#farhenheit-link");
-fahrenheitLink.addEventListener("click", selectFahrenheit);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", selectCelcius);
 searchCity("Athens");
