@@ -15,6 +15,7 @@ li::first-letter {
 }
 #temperature {
   font-size: 45px;
+  padding-top: 5px;
 }
 .full-page {
   font-family: monospace;
@@ -23,7 +24,7 @@ li::first-letter {
 }
 .right-list {
   font-size: 16px;
-  padding-top: 68px;
+  padding-top: 88px;
   padding-right: 22px;
 }
 
@@ -33,6 +34,7 @@ li::first-letter {
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
+  box-shadow: 2px 1px 4px 2px #87848469;
 }
 .container-form {
   display: flex;
@@ -65,8 +67,8 @@ img {
   height: 70px;
 }
 .date-desc {
-  margin-top: 24px;
-  margin-bottom: 50px;
+  margin-top: 15px;
+  margin-bottom: 39px;
 }
 .weather-forecast-temp {
   font-size: 13px;
